@@ -1,0 +1,37 @@
+[project]
+name = "blacksmith"
+version = "0.1.0"
+description = "Monorepo for Python projects"
+requires-python = ">=3.12"
+dependencies = [
+    "howtocook",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+    "mypy>=1.8.0",
+]
+
+[tool.uv.workspace]
+members = ["apps/*", "packages/*"]
+
+[tool.uv.sources]
+gh = { workspace = true }
+howtocook = { workspace = true }
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
