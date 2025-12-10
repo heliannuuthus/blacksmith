@@ -233,13 +233,17 @@ def status(output_dir):
 @cli.command()
 @click.option("-o", "--output-dir", default="datasets/howtocook/dishes", show_default=True)
 @click.option("-c", "--category", help="Category filter")
+@click.option("-f", "--force", is_flag=True, help="Force full sync (ignore incremental)")
 @click.option("-j", "--concurrency", type=int, default=DEFAULT_CONCURRENCY, show_default=True)
-def detect(output_dir, category, concurrency):
+def detect(output_dir, category, force, concurrency):
     """
     Full workflow: fetch -> parse -> evaluate -> refine -> save.
     
     Uses LLM (Qwen) to evaluate and refine recipes.
     Requires DASHSCOPE_API_KEY environment variable.
+    
+    Supports incremental sync by default (only processes new/updated files).
+    Use --force to process all files.
     """
     from dotenv import load_dotenv
     load_dotenv()
@@ -256,17 +260,19 @@ def detect(output_dir, category, concurrency):
     click.echo("=" * 50)
     click.echo(f"Output: {output_dir}")
     click.echo(f"Category: {category or 'all'}")
+    click.echo(f"Mode: {'force (full)' if force else 'incremental'}")
     click.echo(f"Concurrency: {concurrency}")
     click.echo()
     
     detector = RecipeDetector()
-    result = detector.run(output_dir=output_dir, category=category, concurrency=concurrency)
+    result = detector.run(output_dir=output_dir, category=category, concurrency=concurrency, force=force)
     
     click.echo()
     click.echo("=" * 50)
     click.echo("Results")
     click.echo("=" * 50)
     click.echo(f"Total:   {result['total']}")
+    click.echo(f"Skipped: {result['skipped']} (already up to date)")
     click.echo(f"Fetched: {result['fetched']}")
     click.echo(f"Refined: {result['refined']}")
     click.echo(f"Saved:   {result['saved']}")
