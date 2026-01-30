@@ -1,0 +1,13 @@
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/arrayvec-bfffe39765e41055.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/utils.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libarrayvec-bfffe39765e41055.rlib: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/utils.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libarrayvec-bfffe39765e41055.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec_impl.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/array_string.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/char.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/errors.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/utils.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec_impl.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/arrayvec.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/array_string.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/char.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/errors.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/arrayvec-0.7.6/src/utils.rs:

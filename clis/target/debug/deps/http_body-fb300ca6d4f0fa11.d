@@ -1,0 +1,15 @@
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/http_body-fb300ca6d4f0fa11.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/collect.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/empty.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/full.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/limited.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/next.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/size_hint.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/mod.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/box_body.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_data.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_err.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/libhttp_body-fb300ca6d4f0fa11.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/collect.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/empty.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/full.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/limited.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/next.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/size_hint.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/mod.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/box_body.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_data.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_err.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/collect.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/empty.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/full.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/limited.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/next.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/size_hint.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/mod.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/box_body.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_data.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/http-body-0.4.6/src/combinators/map_err.rs:

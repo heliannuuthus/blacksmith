@@ -1,0 +1,12 @@
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/linux_raw_sys-18e35791fffc015a.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/elf.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/auxvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/errno.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/general.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/ioctl.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/liblinux_raw_sys-18e35791fffc015a.rlib: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/elf.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/auxvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/errno.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/general.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/ioctl.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/liblinux_raw_sys-18e35791fffc015a.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/elf.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/auxvec.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/errno.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/general.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/ioctl.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/elf.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/auxvec.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/errno.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/general.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/linux-raw-sys-0.11.0/src/x86_64/ioctl.rs:

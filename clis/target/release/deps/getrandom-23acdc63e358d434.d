@@ -1,0 +1,13 @@
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/getrandom-23acdc63e358d434.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/error.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util_libc.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/use_file.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lazy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/linux_android_with_fallback.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libgetrandom-23acdc63e358d434.rlib: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/error.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util_libc.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/use_file.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lazy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/linux_android_with_fallback.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libgetrandom-23acdc63e358d434.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/error.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util_libc.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/use_file.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lazy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/linux_android_with_fallback.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/error.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/util_libc.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/use_file.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/lazy.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/getrandom-0.2.17/src/linux_android_with_fallback.rs:

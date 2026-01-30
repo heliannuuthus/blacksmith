@@ -1,0 +1,12 @@
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/proc_macro_error2-367e6b79347f8aa3.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/dummy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/diagnostic.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/macros.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/sealed.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/imp/fallback.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libproc_macro_error2-367e6b79347f8aa3.rlib: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/dummy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/diagnostic.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/macros.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/sealed.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/imp/fallback.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/release/deps/libproc_macro_error2-367e6b79347f8aa3.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/dummy.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/diagnostic.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/macros.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/sealed.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/imp/fallback.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/dummy.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/diagnostic.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/macros.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/sealed.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/proc-macro-error2-2.0.1/src/imp/fallback.rs:
