@@ -1,0 +1,13 @@
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/console-eae9ebddb9ec5a0a.d: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/common_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/kb.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/unix_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/utils.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/ansi.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/libconsole-eae9ebddb9ec5a0a.rlib: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/common_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/kb.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/unix_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/utils.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/ansi.rs
+
+/workspace/heliannuuthus/blacksmith/clis/target/debug/deps/libconsole-eae9ebddb9ec5a0a.rmeta: /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/lib.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/common_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/kb.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/unix_term.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/utils.rs /root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/ansi.rs
+
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/lib.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/common_term.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/kb.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/term.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/unix_term.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/utils.rs:
+/root/.cargo/registry/src/rsproxy.cn-e3de039b2554c837/console-0.15.11/src/ansi.rs:
