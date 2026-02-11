@@ -1,6 +1,6 @@
 ---
 description: Enforce modern TypeScript best practices for robust, type-safe JavaScript applications, focusing on strictness, clear type definitions, and runtime validation.
-globs: **/*.{js,jsx}
+globs: **/*.{ts,tsx}
 ---
 # TypeScript Best Practices (for JS/JSX Type-Checking)
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================================
 # Vibe Coding Installer
-# 将 rules / skills / agents / commands 安装到目标项目的 .cursor 目录
+# 将 rules / skills / agents 安装到目标项目的 .cursor 目录
 # ============================================================================
 set -euo pipefail
 
@@ -15,17 +15,18 @@ Usage: $(basename "$0") [TARGET_PROJECT_DIR]
 将 vibe-coding 资源安装到目标项目的 .cursor/ 目录。
 
   TARGET_PROJECT_DIR  目标项目根目录 (默认: 当前目录)
+                      使用 ~ 安装到全局 ~/.cursor/
 
 Options:
   --rules-only     仅安装 rules
   --skills-only    仅安装 skills
   --agents-only    仅安装 agents
-  --commands-only  仅安装 commands
   --dry-run        仅显示将要执行的操作
   -h, --help       显示帮助信息
 
 示例:
   $(basename "$0") ~/projects/my-app          # 安装全部到 my-app
+  $(basename "$0") ~                          # 安装全部到全局 ~/.cursor/
   $(basename "$0") --rules-only ~/projects/my-app  # 仅安装 rules
   $(basename "$0")                            # 安装全部到当前目录
 EOF
@@ -37,14 +38,12 @@ DRY_RUN=false
 INSTALL_RULES=true
 INSTALL_SKILLS=true
 INSTALL_AGENTS=true
-INSTALL_COMMANDS=true
 
 for arg in "$@"; do
   case "$arg" in
-    --rules-only)    INSTALL_SKILLS=false; INSTALL_AGENTS=false; INSTALL_COMMANDS=false ;;
-    --skills-only)   INSTALL_RULES=false; INSTALL_AGENTS=false; INSTALL_COMMANDS=false ;;
-    --agents-only)   INSTALL_RULES=false; INSTALL_SKILLS=false; INSTALL_COMMANDS=false ;;
-    --commands-only) INSTALL_RULES=false; INSTALL_SKILLS=false; INSTALL_AGENTS=false ;;
+    --rules-only)    INSTALL_SKILLS=false; INSTALL_AGENTS=false ;;
+    --skills-only)   INSTALL_RULES=false; INSTALL_AGENTS=false ;;
+    --agents-only)   INSTALL_RULES=false; INSTALL_SKILLS=false ;;
     --dry-run)       DRY_RUN=true ;;
     -*)              ;; # 忽略未知 flag
     *)               TARGET="$arg" ;;
@@ -92,15 +91,10 @@ if $INSTALL_AGENTS; then
   copy_dir "$SCRIPT_DIR/agents" "$TARGET/.cursor/agents" "Agents"
 fi
 
-if $INSTALL_COMMANDS; then
-  copy_dir "$SCRIPT_DIR/commands" "$TARGET/.cursor/commands" "Commands"
-fi
-
 echo ""
 echo "安装完成！重启 Cursor 以加载新配置。"
 echo ""
 echo "使用方式:"
 echo "  Rules   -> 自动应用或在 chat 中 @rule-name 引用"
-echo "  Skills  -> Agent 自动发现或输入 /skill-name 调用"
+echo "  Skills  -> Agent 自动发现 / 手动 @skill-name 引用"
 echo "  Agents  -> Agent 根据任务自动委派子代理"
-echo "  Commands -> 在 chat 输入 / 查看可用命令"

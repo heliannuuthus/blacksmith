@@ -1,6 +1,6 @@
 ---
 description: Definitive guidelines for writing clear, simple, performant, and maintainable Go code, adhering to Google's style and modern best practices.
-globs: **/*
+globs: **/*.go
 ---
 # Go Best Practices
 

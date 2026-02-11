@@ -1,6 +1,6 @@
 ---
 description: Definitive guidelines for writing idiomatic, performant, and maintainable Rust code, focusing on modern best practices for structure, patterns, and error handling.
-globs: **/*
+globs: **/*.rs
 ---
 # Rust Best Practices
 
