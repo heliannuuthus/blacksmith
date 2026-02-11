@@ -10,6 +10,12 @@ blacksmith/
 │   └── howtocook/            # HowToCook 数据抓取工具
 ├── packages/                  # 共享库
 │   └── gh/                   # GitHub API 客户端
+├── vibe-coding/              # Cursor IDE vibe coding 资源集合
+│   ├── rules/                # AI 行为规则 (17 个 .mdc)
+│   ├── skills/               # Agent 领域技能 (31 个 SKILL.md)
+│   ├── agents/               # 自定义子代理 (7 个)
+│   ├── commands/             # 斜杠命令 (26 个)
+│   └── install.sh            # 一键安装到目标项目
 └── pyproject.toml            # workspace 配置
 ```
 
