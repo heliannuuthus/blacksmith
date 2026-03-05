@@ -67,5 +67,9 @@ Thumbs.db
 datasets/**/*.json
 !datasets/**/.gitkeep
 
+# Rust
+target/
+Cargo.lock
+
 # Sync manifests
 .sync-manifest.json
