@@ -6,16 +6,18 @@ Python monorepo，使用 [uv](https://docs.astral.sh/uv/) 管理。
 
 ```
 blacksmith/
-├── apps/                      # 应用程序（CLI 工具等）
+├── apps/                      # Python 应用
 │   └── howtocook/            # HowToCook 数据抓取工具
-├── packages/                  # 共享库
+├── clis/                      # Rust CLI 工具
+│   └── hostctl/              # Hosts 文件管理工具（TUI）
+├── packages/                  # 共享 Python 库
 │   └── gh/                   # GitHub API 客户端
 ├── vibe-coding/              # Cursor IDE vibe coding 资源集合 → [详情](vibe-coding/README.md)
-│   ├── rules/                # AI 行为规则 (12) → [详情](vibe-coding/rules/README.md)
-│   ├── skills/               # Agent 领域技能 (57) → [详情](vibe-coding/skills/README.md)
-│   ├── agents/               # 自定义子代理 (7) → [详情](vibe-coding/agents/README.md)
+│   ├── rules/                # AI 行为规则 → [详情](vibe-coding/rules/README.md)
+│   ├── skills/               # Agent 领域技能 → [详情](vibe-coding/skills/README.md)
+│   ├── agents/               # 自定义子代理 → [详情](vibe-coding/agents/README.md)
 │   └── install.sh            # 一键安装
-└── pyproject.toml            # workspace 配置
+└── pyproject.toml            # Python workspace 配置
 ```
 
 ## 快速开始

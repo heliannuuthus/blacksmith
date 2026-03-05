@@ -1,10 +1,10 @@
 [workspace]
-members = ["cloud"]
+members = ["hostctl"]
 resolver = "2"
 
 [workspace.package]
 version = "0.1.0"
-authors = ["blacksmith"]
+authors = ["heliannuuthus"]
 license = "MIT"
 edition = "2024"
 rust-version = "1.85"
@@ -22,37 +22,17 @@ toml = "0.9"
 # async runtime
 tokio = { version = "1.0", features = ["rt-multi-thread", "macros", "fs"] }
 
-# http client
-reqwest = { version = "0.13", default-features = false, features = ["json", "rustls"] }
-
 # cli
-clap = { version = "4.5", features = ["derive"] }
-clap_complete = { version = "4.5", features = ["unstable-dynamic"] }
-
-# interactive prompts
-dialoguer = "0.12"
-
-# async
-async-trait = "0.1"
-
-# utils
-chrono = { version = "0.4", features = ["serde"] }
-dirs = "6.0"
-
-# crypto for aliyun signature
-hmac = "0.12"
-sha2 = "0.10"
-hex = "0.4"
-base64 = "0.22"
-urlencoding = "2.1"
-uuid = { version = "1.0", features = ["v4"] }
-rand = "0.9"
+clap = { version = "4.5", features = ["derive", "color"] }
+colored = "3.1"
+indicatif = "0.18"
 
 # terminal ui
-tabled = { version = "0.20", features = ["ansi"] }
-console = "0.16"
 ratatui = "0.30"
 crossterm = "0.29"
+
+# utils
+dirs = "6.0"
 
 [workspace.lints.rust]
 unsafe_code = "forbid"
