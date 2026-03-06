@@ -4,6 +4,8 @@ use crate::hosts::HostsFile;
 use crate::profile::Profile;
 use crate::tui::Tui;
 use anyhow::{Context, Result};
+use clap::CommandFactory;
+use clap_complete::generate;
 use colored::*;
 use std::fs;
 use std::path::PathBuf;
@@ -45,7 +47,104 @@ impl App {
                 hosts,
             } => self.add_entry(profile, ip, hosts),
             Commands::Remove { profile, target } => self.remove_entry(profile, target),
+            Commands::Completion { shell } => self.generate_completion(shell),
+            Commands::Doctor => self.doctor(),
         }
+    }
+
+    fn generate_completion(&self, shell: clap_complete::Shell) -> Result<()> {
+        let mut cmd = Cli::command();
+        generate(shell, &mut cmd, "hostctl", &mut std::io::stdout());
+        Ok(())
+    }
+
+    fn doctor(&self) -> Result<()> {
+        println!("{}", "hostctl doctor".green().bold());
+        println!("{}", "─".repeat(40).bright_black());
+
+        let mut all_ok = true;
+
+        // 配置目录
+        let profiles_ok = self.config.profiles_dir.exists();
+        Self::print_check("配置目录", &self.config.profiles_dir.display().to_string(), profiles_ok);
+        if !profiles_ok { all_ok = false; }
+
+        // 备份目录
+        let backup_ok = self.config.backup_dir.exists();
+        Self::print_check("备份目录", &self.config.backup_dir.display().to_string(), backup_ok);
+        if !backup_ok { all_ok = false; }
+
+        // hosts 文件
+        let hosts_readable = self.config.hosts_file.exists()
+            && fs::read_to_string(&self.config.hosts_file).is_ok();
+        Self::print_check("hosts 文件可读", &self.config.hosts_file.display().to_string(), hosts_readable);
+        if !hosts_readable { all_ok = false; }
+
+        // hosts 文件可写
+        let hosts_writable = fs::OpenOptions::new()
+            .write(true)
+            .open(&self.config.hosts_file)
+            .is_ok();
+        Self::print_check(
+            "hosts 文件可写",
+            if hosts_writable { "直接写入" } else { "需要提权 (pkexec/sudo)" },
+            hosts_writable,
+        );
+
+        // pkexec 可用性（仅在无直接写入权限时重要）
+        if !hosts_writable {
+            let pkexec_available = which("pkexec");
+            let sudo_available = which("sudo");
+            let has_escalation = pkexec_available || sudo_available;
+            let detail = match (pkexec_available, sudo_available) {
+                (true, true) => "pkexec, sudo",
+                (true, false) => "pkexec",
+                (false, true) => "sudo",
+                (false, false) => "未找到",
+            };
+            Self::print_check("提权工具", detail, has_escalation);
+            if !has_escalation { all_ok = false; }
+        }
+
+        // 已有 profile 数量
+        let profile_count = self.get_profiles().map(|p| p.len()).unwrap_or(0);
+        println!(
+            "  {} {}  {}",
+            "ℹ".blue(),
+            "配置文件数量".bold(),
+            profile_count
+        );
+
+        // 备份数量
+        let backup_count = self.get_backups().map(|b| b.len()).unwrap_or(0);
+        println!(
+            "  {} {}  {}",
+            "ℹ".blue(),
+            "备份数量".bold(),
+            backup_count
+        );
+
+        // 编辑器
+        let editor = std::env::var("EDITOR").unwrap_or_else(|_| "未设置 (默认 nano)".to_string());
+        println!(
+            "  {} {}  {}",
+            "ℹ".blue(),
+            "编辑器".bold(),
+            editor
+        );
+
+        println!("{}", "─".repeat(40).bright_black());
+        if all_ok {
+            println!("{}", "✓ 所有检查通过".green().bold());
+        } else {
+            println!("{}", "✗ 部分检查未通过，请根据提示修复".red().bold());
+        }
+        Ok(())
+    }
+
+    fn print_check(label: &str, detail: &str, ok: bool) {
+        let icon = if ok { "✓".green() } else { "✗".red() };
+        println!("  {} {}  {}", icon, label.bold(), detail.bright_black());
     }
 
     fn list_profiles(&self) -> Result<()> {
@@ -290,4 +389,13 @@ impl App {
     fn profile_path(&self, name: &str) -> PathBuf {
         self.config.profiles_dir.join(format!("{}.toml", name))
     }
+}
+
+fn which(cmd: &str) -> bool {
+    std::process::Command::new("which")
+        .arg(cmd)
+        .stdout(std::process::Stdio::null())
+        .stderr(std::process::Stdio::null())
+        .status()
+        .is_ok_and(|s| s.success())
 }

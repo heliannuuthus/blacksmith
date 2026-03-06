@@ -1,4 +1,5 @@
 use clap::{Parser, Subcommand};
+use clap_complete::Shell;
 
 #[derive(Parser)]
 #[command(name = "hostctl")]
@@ -65,4 +66,11 @@ pub enum Commands {
         /// IP 地址或主机名
         target: String,
     },
+    /// 生成 shell 补全脚本
+    Completion {
+        /// 目标 shell 类型
+        shell: Shell,
+    },
+    /// 检查运行环境和依赖状态
+    Doctor,
 }
