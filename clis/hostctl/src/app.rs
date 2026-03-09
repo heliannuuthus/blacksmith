@@ -168,7 +168,7 @@ impl App {
         }
 
         let profile = Profile::new(name.clone());
-        profile.save(&profile_path)?;
+        profile.save_with_template(&profile_path)?;
         println!("{} {}", "✓".green(), format!("配置文件已创建: {}", name).green());
         Ok(())
     }
@@ -261,15 +261,56 @@ impl App {
             anyhow::bail!("配置文件不存在: {}", name);
         }
 
-        // 使用系统编辑器
-        let editor = std::env::var("EDITOR").unwrap_or_else(|_| "nano".to_string());
-        std::process::Command::new(editor)
-            .arg(&profile_path)
-            .status()
-            .context("无法启动编辑器")?;
+        let original_content = fs::read_to_string(&profile_path)
+            .with_context(|| format!("无法读取配置文件: {}", profile_path.display()))?;
 
-        println!("{} {}", "✓".green(), format!("配置文件已编辑: {}", name).green());
-        Ok(())
+        let tmp_dir = std::env::temp_dir();
+        let tmp_path = tmp_dir.join(format!("hostctl_{}.toml", name));
+        fs::write(&tmp_path, &original_content)
+            .with_context(|| format!("无法创建临时文件: {}", tmp_path.display()))?;
+
+        let editor = std::env::var("EDITOR").unwrap_or_else(|_| "nano".to_string());
+
+        loop {
+            std::process::Command::new(&editor)
+                .arg(&tmp_path)
+                .status()
+                .context("无法启动编辑器")?;
+
+            let edited_content = fs::read_to_string(&tmp_path)
+                .context("无法读取编辑后的临时文件")?;
+
+            if edited_content == original_content {
+                let _ = fs::remove_file(&tmp_path);
+                println!("{} {}", "ℹ".blue(), "未做任何修改".bright_black());
+                return Ok(());
+            }
+
+            match toml::from_str::<Profile>(&edited_content) {
+                Ok(_) => {
+                    fs::write(&profile_path, &edited_content)
+                        .with_context(|| format!("无法保存配置文件: {}", profile_path.display()))?;
+                    let _ = fs::remove_file(&tmp_path);
+                    println!("{} {}", "✓".green(), format!("配置文件已编辑: {}", name).green());
+                    return Ok(());
+                }
+                Err(e) => {
+                    eprintln!("{} {}", "✗".red(), "TOML 格式校验失败:".red().bold());
+                    eprintln!("  {}", e);
+                    eprint!("{}", "重新编辑? [Y/n/q] ".yellow());
+
+                    let mut input = String::new();
+                    std::io::stdin().read_line(&mut input).context("无法读取输入")?;
+                    let input = input.trim().to_lowercase();
+
+                    if input == "n" || input == "q" {
+                        let _ = fs::remove_file(&tmp_path);
+                        println!("{} {}", "ℹ".blue(), "已放弃修改".bright_black());
+                        return Ok(());
+                    }
+                }
+            }
+        }
     }
 
     fn backup_hosts(&self) -> Result<()> {
