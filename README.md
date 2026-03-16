@@ -12,6 +12,8 @@ blacksmith/
 │   └── hostctl/              # Hosts 文件管理工具（TUI）
 ├── packages/                  # 共享 Python 库
 │   └── gh/                   # GitHub API 客户端
+├── scripts/                   # 浏览器 / 用户脚本
+│   └── totp-auto-paste/      # TOTP 验证码自动填入（Tampermonkey）
 ├── vibe-coding/              # Cursor IDE vibe coding 资源集合 → [详情](vibe-coding/README.md)
 │   ├── rules/                # AI 行为规则 → [详情](vibe-coding/rules/README.md)
 │   ├── skills/               # Agent 领域技能 → [详情](vibe-coding/skills/README.md)
