@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TOTP Auto-Paste | 验证码自动填入
 // @namespace    https://github.com/heliannuuthus/blacksmith
-// @version      1.0.0
+// @version      1.0.1
 // @description  Auto-paste TOTP verification code from clipboard when focusing on OTP input fields. Works with Bitwarden / Vaultwarden auto-copy.
 // @description:zh-CN  聚焦验证码输入框时自动从剪贴板粘贴 TOTP，配合 Bitwarden / Vaultwarden 的自动复制功能使用
 // @author       heliannuuthus
@@ -56,6 +56,8 @@
     if (input.dataset.totpWatched) return;
     input.dataset.totpWatched = 'true';
     input.addEventListener('focus', () => tryPaste(input));
+    input.addEventListener('click', () => tryPaste(input));
+    if (document.activeElement === input) tryPaste(input);
   }
 
   const observer = new MutationObserver(() => {
