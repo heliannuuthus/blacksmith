@@ -1,0 +1,56 @@
+# Greasy Fork 同步：通过 tag 触发，全动态，无需修改 workflow
+#
+# Tag 格式：scripts/{script-name}/v{version}
+# 文件位置：scripts/{script-name}.user.js
+#
+# Secret 命名约定（连字符转下划线，大写）：
+#   GREASYFORK_URL_{NAME}     - webhook URL（必需）
+#   GREASYFORK_SECRET_{NAME}  - webhook secret（可选）
+#
+# 示例（脚本名 my-tool）：
+#   tag:    scripts/my-tool/v1.0.0
+#   secret: GREASYFORK_URL_MY_TOOL / GREASYFORK_SECRET_MY_TOOL
+#
+# 新增脚本只需添加对应 secret，workflow 不用改
+name: Greasy Fork Sync
+
+on:
+  push:
+    tags:
+      - 'scripts/*/v*'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compute secret names from tag
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          SCRIPT_NAME=$(echo "$TAG" | cut -d'/' -f2)
+          VERSION=$(echo "$TAG" | cut -d'/' -f3)
+          SUFFIX=$(echo "$SCRIPT_NAME" | tr '[:lower:]-' '[:upper:]_')
+          echo "script_name=$SCRIPT_NAME" >> "$GITHUB_ENV"
+          echo "version=$VERSION" >> "$GITHUB_ENV"
+          echo "url_key=GREASYFORK_URL_${SUFFIX}" >> "$GITHUB_ENV"
+          echo "secret_key=GREASYFORK_SECRET_${SUFFIX}" >> "$GITHUB_ENV"
+          echo "Parsed: script=$SCRIPT_NAME version=$VERSION suffix=$SUFFIX"
+
+      - name: Notify Greasy Fork
+        env:
+          WEBHOOK_URL: ${{ secrets[env.url_key] }}
+          WEBHOOK_SECRET: ${{ secrets[env.secret_key] }}
+        run: |
+          if [ -z "$WEBHOOK_URL" ]; then
+            echo "::warning::Secret ${{ env.url_key }} not set, skip sync for ${{ env.script_name }}"
+            exit 0
+          fi
+
+          PAYLOAD='${{ toJSON(github.event) }}'
+          HEADERS=(-H "Content-Type: application/json")
+          if [ -n "$WEBHOOK_SECRET" ]; then
+            SIGNATURE="sha256=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $2}')"
+            HEADERS+=(-H "X-Hub-Signature-256: $SIGNATURE")
+          fi
+
+          echo "Triggering Greasy Fork sync for ${{ env.script_name }} ${{ env.version }}"
+          curl -sS -X POST "$WEBHOOK_URL" "${HEADERS[@]}" -d "$PAYLOAD"
