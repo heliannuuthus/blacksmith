@@ -25,6 +25,7 @@
     'input[name*="verification" i]',
     'input[name*="verify" i]',
     'input[placeholder*="验证码"]',
+    'input[placeholder*="安全码"]',
     'input[placeholder*="verification" i]',
     'input[aria-label*="verification" i]',
     'input[aria-label*="code" i]',
