@@ -6,26 +6,27 @@
 
 | 项目 | 格式 | 示例 |
 |------|------|------|
-| 文件 | `scripts/{name}.user.js` | `scripts/my-tool.user.js` |
-| Tag | `scripts/{name}/v{version}` | `scripts/my-tool/v1.0.0` |
-| Secret | `GREASYFORK_WEBHOOK_{NAME}` | `GREASYFORK_WEBHOOK_MY_TOOL` |
+| 文件 | `scripts/{name}/{name}.user.js` 或 `scripts/{name}.user.js` | `scripts/totp-auto-paste/totp-auto-paste.user.js` |
+| Secret | `GREASYFORK_URL_{NAME}` | `GREASYFORK_URL_TOTP_AUTO_PASTE` |
 
 ## 发布流程
 
-1. 修改脚本文件 → merge 到 `main`
-2. 打 tag：`git tag scripts/my-tool/v1.0.0 && git push origin scripts/my-tool/v1.0.0`
-3. CI 自动解析 tag，通过对应 webhook 通知 Greasy Fork 拉取最新脚本
+1. 修改脚本文件（更新 `@version`）→ merge 到 `main`
+2. CI 自动检测变更并通知 Greasy Fork 同步
 
 ## 新增脚本
 
-1. 在 `scripts/` 下添加 `{name}.user.js`
-2. 在 Greasy Fork 配置 Sync URL：
+1. 在 `scripts/` 下添加 `{name}/{name}.user.js` 或 `{name}.user.js`
+2. 在 Greasy Fork 配置 Sync URL（raw 链接）：
    ```
-   https://raw.githubusercontent.com/heliannuuthus/blacksmith/main/scripts/{name}.user.js
+   https://raw.githubusercontent.com/heliannuuthus/blacksmith/main/scripts/{name}/{name}.user.js
    ```
-3. 在 GitHub Settings → Secrets → Actions 添加 `GREASYFORK_WEBHOOK_{NAME}`
-4. 在 `.github/workflows/greasyfork-sync.yml` 的 `env` 中添加映射：
+3. 在 Greasy Fork 脚本管理页配置 webhook，复制 webhook URL
+4. 在 GitHub Settings → Secrets → Actions 添加：
+   - `GREASYFORK_URL_{NAME}`：webhook URL（必需，连字符转下划线，如 `TOTP_AUTO_PASTE`）
+   - `GREASYFORK_SECRET_{NAME}`：webhook secret（可选）
+5. 在 `.github/workflows/greasyfork-sync.yml` 的 matrix 中添加一项：
    ```yaml
-   WEBHOOK_{name}: ${{ secrets.GREASYFORK_WEBHOOK_{NAME} }}
+   - script: {name}
+     suffix: {NAME}
    ```
-5. 打 tag 发布即可
