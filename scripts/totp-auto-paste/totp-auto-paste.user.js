@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TOTP Auto-Paste | 验证码自动填入
 // @namespace    https://github.com/heliannuuthus/blacksmith
-// @version      1.0.1
+// @version      1.1.0
 // @description  Auto-paste TOTP verification code from clipboard when focusing on OTP input fields. Works with Bitwarden / Vaultwarden auto-copy.
 // @description:zh-CN  聚焦验证码输入框时自动从剪贴板粘贴 TOTP，配合 Bitwarden / Vaultwarden 的自动复制功能使用
 // @author       heliannuuthus
@@ -24,11 +24,35 @@
     'input[name*="2fa" i]',
     'input[name*="verification" i]',
     'input[name*="verify" i]',
+    'input[name*="passcode" i]',
+    'input[name*="pin_code" i]',
+    'input[name*="auth_code" i]',
+    'input[name*="security_code" i]',
+    'input[name*="two_factor" i]',
+    'input[id*="otp" i]',
+    'input[id*="totp" i]',
+    'input[id*="2fa" i]',
+    'input[id*="two-factor" i]',
+    'input[id*="mfa" i]',
     'input[placeholder*="验证码"]',
     'input[placeholder*="安全码"]',
+    'input[placeholder*="动态口令"]',
     'input[placeholder*="verification" i]',
+    'input[placeholder*="one-time" i]',
+    'input[placeholder*="6-digit" i]',
+    'input[placeholder*="auth code" i]',
+    'input[placeholder*="passcode" i]',
     'input[aria-label*="verification" i]',
     'input[aria-label*="code" i]',
+    'input[aria-label*="one-time" i]',
+    'input[aria-label*="two-factor" i]',
+    'input[aria-label*="passcode" i]',
+    'input[data-testid*="otp" i]',
+    'input[data-testid*="totp" i]',
+    'input[data-testid*="2fa" i]',
+    'input[data-testid*="two-fa" i]',
+    'input[data-testid*="mfa" i]',
+    'input[inputmode="numeric"][maxlength="6"]',
   ];
 
   function findTotpInput() {
