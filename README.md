@@ -14,11 +14,7 @@ blacksmith/
 │   └── gh/                   # GitHub API 客户端
 ├── scripts/                   # 浏览器 / 用户脚本
 │   └── totp-auto-paste/      # TOTP 验证码自动填入（Tampermonkey）
-├── vibe-coding/              # Cursor IDE vibe coding 资源集合 → [详情](vibe-coding/README.md)
-│   ├── rules/                # AI 行为规则 → [详情](vibe-coding/rules/README.md)
-│   ├── skills/               # Agent 领域技能 → [详情](vibe-coding/skills/README.md)
-│   ├── agents/               # 自定义子代理 → [详情](vibe-coding/agents/README.md)
-│   └── install.sh            # 一键安装
+├── vibe-coding/              # 占位说明：资源已迁至独立私有库 → [详情](vibe-coding/README.md)
 └── pyproject.toml            # Python workspace 配置
 ```
 
