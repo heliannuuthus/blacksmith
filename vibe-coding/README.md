@@ -1,6 +1,6 @@
 # Vibe coding（已迁出）
 
-原 **rules / skills / agents / install.sh** 已全部迁入 GitHub 私有库 **`heliannuuthus/workspace`** 的 **`.claude/`** 目录，用于 Claude 与 Cursor 双 IDE，并与 Git 子模块 + 多根工作区配合使用。
+原 AI 开发资源已迁入 GitHub 私有库 **`heliannuuthus/workspace`**，统一使用根目录 `AGENTS.md` 与 `.agents/skills/`，供 Codex、Cursor 等 Agent 工具读取，并与 Git 子模块和多根工作区配合使用。
 
 ## 新位置
 
@@ -8,10 +8,8 @@
 
 ## 使用方式
 
-1. 将该目录初始化为 Git 仓库并推送到 **GitHub 私有库**（见该仓库根目录 `README.md`）。
-2. **Claude**：直接打开该仓库（或把它嵌进你的工作区），使用 `.claude/`。
-3. **Cursor**：在该仓库或目标项目根执行  
-   `bash /path/to/workspace/.claude/install.sh .`  
-   生成 `.cursor/`。
+1. 克隆后初始化 submodule，具体命令见该仓库根目录 `README.md`。
+2. 从 workspace 根目录启动 Codex 或打开 Cursor，使其读取根 `AGENTS.md` 和 `.agents/skills/`。
+3. 单独打开业务子项目时，使用该项目自己的 `AGENTS.md`。
 
 blacksmith 内不再保留副本，避免与私有库双份维护。
