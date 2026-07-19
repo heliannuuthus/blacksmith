@@ -975,9 +975,7 @@ class RasterRecastWindow(QMainWindow):
         for control in self.ai_locked_controls:
             control.setEnabled(enabled)
         self.canvas.selection_enabled = enabled
-        self.canvas.setCursor(
-            Qt.CursorShape.CrossCursor if enabled else Qt.CursorShape.ArrowCursor
-        )
+        self.canvas.setCursor(Qt.CursorShape.CrossCursor if enabled else Qt.CursorShape.ArrowCursor)
 
     def _set_ai_busy(self, message: str, *, cancellable: bool = True) -> None:
         self.status_label.setText(message)
