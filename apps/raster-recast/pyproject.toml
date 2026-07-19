@@ -1,0 +1,21 @@
+[project]
+name = "raster-recast"
+version = "0.1.0"
+description = "Local-first desktop tool for precisely replacing text in images"
+readme = "README.md"
+requires-python = ">=3.12"
+keywords = ["image-editing", "inpainting", "text-replacement", "desktop-gui"]
+dependencies = [
+    "pillow>=11.0.0",
+    "pyside6-essentials>=6.8.0",
+]
+
+[project.scripts]
+raster-recast = "raster_recast.gui:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/raster_recast"]

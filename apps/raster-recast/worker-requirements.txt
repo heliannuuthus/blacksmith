@@ -1,0 +1,16 @@
+# Standalone FLUX-Text runtime verified on RTX 3080 10GB.
+torch==2.13.0
+torchvision==0.28.0
+numpy==2.5.1
+pillow==12.3.0
+pyyaml==6.0.3
+safetensors==0.8.0
+mmgp==3.7.9
+diffusers==0.32.2
+transformers==4.46.3
+accelerate==1.1.1
+peft==0.14.0
+huggingface-hub==0.27.0
+tokenizers==0.20.3
+opencv-python-headless==4.10.0.84
+protobuf==5.29.2

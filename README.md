@@ -7,7 +7,8 @@ Python monorepo，使用 [uv](https://docs.astral.sh/uv/) 管理。
 ```
 blacksmith/
 ├── apps/                      # Python 应用
-│   └── howtocook/            # HowToCook 数据抓取工具
+│   ├── howtocook/            # HowToCook 数据抓取工具
+│   └── raster-recast/        # 本机图片文字精修工具
 ├── clis/                      # Rust CLI 工具
 │   └── hostctl/              # Hosts 文件管理工具（TUI）
 ├── packages/                  # 共享 Python 库
@@ -38,6 +39,16 @@ uv run howtocook -vv categories     # DEBUG 级别
 ```
 
 ## 项目
+
+### RasterRecast
+
+本机纯 AI 图片文字编辑工具：框选旧文字，由 FLUX-Text 替换为指定汉字或数字。
+
+```bash
+uv run raster-recast
+```
+
+详细参数见 [`apps/raster-recast/README.md`](apps/raster-recast/README.md)。
 
 ### howtocook
 
