@@ -8,7 +8,7 @@ export LLM_PROVIDER=custom
 export CUSTOM_BASE_URL="${CUSTOM_BASE_URL:-https://api-hub.hellorobotaxi.top/v1}"
 export CUSTOM_PROCESS_MODEL="${CUSTOM_PROCESS_MODEL:-qwen3.7-max}"
 export CUSTOM_REFINE_MODEL="${CUSTOM_REFINE_MODEL:-qwen3.7-max}"
-export LLM_CONCURRENCY="${LLM_CONCURRENCY:-2}"
+export LLM_CONCURRENCY="${LLM_CONCURRENCY:-5}"
 export LLM_REQUEST_TIMEOUT="${LLM_REQUEST_TIMEOUT:-180}"
 
 if [[ -z "${CUSTOM_API_KEY:-}" ]]; then
