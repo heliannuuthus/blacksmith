@@ -239,8 +239,7 @@ def detect(output_dir, category, force, concurrency):
     """
     Full workflow: fetch -> parse -> evaluate -> refine -> save.
     
-    Uses LLM (Qwen) to evaluate and refine recipes.
-    Requires DASHSCOPE_API_KEY environment variable.
+    Uses models routed through Bailian or OpenRouter to evaluate and refine recipes.
     
     Supports incremental sync by default (only processes new/updated files).
     Use --force to process all files.
@@ -248,9 +247,18 @@ def detect(output_dir, category, force, concurrency):
     from dotenv import load_dotenv
     load_dotenv()
     
-    if not os.environ.get("DASHSCOPE_API_KEY"):
-        click.echo("Error: DASHSCOPE_API_KEY required", err=True)
-        click.echo("Set in .env or: export DASHSCOPE_API_KEY=sk-xxx", err=True)
+    provider = os.environ.get("LLM_PROVIDER", "bailian").lower()
+    required_key = {
+        "bailian": "DASHSCOPE_API_KEY",
+        "openrouter": "OPENROUTER_API_KEY",
+        "custom": "CUSTOM_API_KEY",
+    }.get(provider)
+    if required_key is None:
+        click.echo(f"Error: unsupported LLM_PROVIDER: {provider}", err=True)
+        raise SystemExit(1)
+    if not os.environ.get(required_key):
+        click.echo(f"Error: {required_key} required", err=True)
+        click.echo(f"Set {required_key} in the environment or .env", err=True)
         raise SystemExit(1)
     
     from .workflow import RecipeDetector

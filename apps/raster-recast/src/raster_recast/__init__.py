@@ -1,0 +1,5 @@
+"""RasterRecast: local-first generative image text editing."""
+
+__version__ = "0.1.0"
+
+__all__ = ["__version__"]

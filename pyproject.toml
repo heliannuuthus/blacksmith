@@ -5,6 +5,7 @@ description = "Monorepo for Python projects"
 requires-python = ">=3.12"
 dependencies = [
     "howtocook",
+    "raster-recast",
 ]
 
 [project.optional-dependencies]
@@ -20,6 +21,7 @@ members = ["apps/*", "packages/*"]
 [tool.uv.sources]
 gh = { workspace = true }
 howtocook = { workspace = true }
+raster-recast = { workspace = true }
 [tool.ruff]
 line-length = 100
 target-version = "py312"

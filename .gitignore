@@ -67,6 +67,9 @@ Thumbs.db
 datasets/**/*.json
 !datasets/**/.gitkeep
 
+# Local AI model weights and incomplete resumable downloads
+/models/
+
 # Rust
 target/
 Cargo.lock
